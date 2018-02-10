@@ -2,6 +2,7 @@
 #	make RPI=1
 
 TARGET_1 = bin/caliberator
+TARGET_2 = bin/controller
 
 CXX = g++
 INC = `pkg-config --cflags opencv` -I./include #and other include paths -I
@@ -23,17 +24,23 @@ LINK = $(CXX) $(LFLAGS) $(LIB) $^ -o $@
 
 
 .PHONY: all
-all: $(TARGET_1) #and other targets
+all: $(TARGET_1) $(TARGET_2)#and other targets
 
 $(TARGET_1): build/caliberator.o build/histgenerator.o build/sampler.o
 	$(LINK)
+$(TARGET_2): build/controller.o build/histgenerator.o build/gestanalyzer.o
+	$(LINK)
+
 build/histgenerator.o: src/histgenerator.cpp
 	$(COMPILE)
 build/sampler.o: src/sampler.cpp
 	$(COMPILE)
 build/caliberator.o: src/caliberator.cpp
 	$(COMPILE)
-
+build/controller.o: src/controller.cpp
+	$(COMPILE)
+build/gestanalyzer.o: src/gestanalyzer.cpp
+	$(COMPILE)
 
 #[other targets]
 

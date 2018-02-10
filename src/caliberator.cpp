@@ -48,7 +48,7 @@ int main(int argc, char** argv)
 	{
 	  CAM_CAP_FRAME(s_vid, img_bgr);
 	  sampler.sample(img_bgr, img_sub_bgr);
-	  sampler.drawSampleROI(img_bgr, cv::Scalar_<uchar>(0, 255, 255), 2);
+	  sampler.drawSampleROI(img_bgr, cv::Scalar_<uchar>(255, 0, 255), 2);
 
 	  cv::imshow("Sample", img_sub_bgr);
 	  cv::imshow("[s] to sample, [q] to quit", img_bgr);
@@ -119,7 +119,12 @@ int main(int argc, char** argv)
       return 0;
     }
 
-  ofs << hist.rows << "\t" << hist.cols << std::endl;
+  std::cout << hist << std::endl;
+  
+  ofs << "#hist_data" << std::endl;
+  ofs << channels[0] << "\t" << channels[1] << "\t"
+      << binsizes[0] << "\t" << binsizes[1] << "\t"
+      << ranges[0] << "\t" << ranges[1] << std::endl;
   for(cv::MatIterator_<float> hist_it = hist.begin<float>();
       hist_it != hist.end<float>(); ++hist_it)
     ofs << *hist_it << "\t";

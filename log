@@ -1,0 +1,475 @@
+src/gestanalyzer.cpp: In member function ‘int ctrler::GestAnalyzer::analyze(const cv::Mat&, std::vector<cv::Point_<int> >&)’:
+src/gestanalyzer.cpp:14:33: error: no match for ‘operator<’ (operand types are ‘size_t {aka long unsigned int}’ and ‘std::vector<cv::Point_<int> >’)
+     for(size_t index = 0; index < _nonzero_pos_i; ++index)
+                           ~~~~~~^~~~~~~~~~~~~~~~
+In file included from /usr/local/include/c++/7.2.0/queue:64:0,
+                 from /usr/local/include/opencv2/stitching/detail/util_inl.hpp:46,
+                 from /usr/local/include/opencv2/stitching/detail/util.hpp:119,
+                 from /usr/local/include/opencv2/stitching/detail/motion_estimators.hpp:48,
+                 from /usr/local/include/opencv2/stitching.hpp:50,
+                 from /usr/local/include/opencv2/opencv.hpp:86,
+                 from ./include/gestanalyzer.h:4,
+                 from src/gestanalyzer.cpp:1:
+/usr/local/include/c++/7.2.0/bits/stl_queue.h:336:5: note: candidate: template<class _Tp, class _Seq> bool std::operator<(const std::queue<_Tp, _Seq>&, const std::queue<_Tp, _Seq>&)
+     operator<(const queue<_Tp, _Seq>& __x, const queue<_Tp, _Seq>& __y)
+     ^~~~~~~~
+/usr/local/include/c++/7.2.0/bits/stl_queue.h:336:5: note:   template argument deduction/substitution failed:
+src/gestanalyzer.cpp:14:35: note:   mismatched types ‘const std::queue<_Tp, _Seq>’ and ‘size_t {aka long unsigned int}’
+     for(size_t index = 0; index < _nonzero_pos_i; ++index)
+                                   ^~~~~~~~~~~~~~
+In file included from /usr/local/include/c++/7.2.0/list:63:0,
+                 from /usr/local/include/opencv2/stitching/detail/util.hpp:46,
+                 from /usr/local/include/opencv2/stitching/detail/motion_estimators.hpp:48,
+                 from /usr/local/include/opencv2/stitching.hpp:50,
+                 from /usr/local/include/opencv2/opencv.hpp:86,
+                 from ./include/gestanalyzer.h:4,
+                 from src/gestanalyzer.cpp:1:
+/usr/local/include/c++/7.2.0/bits/stl_list.h:1918:5: note: candidate: template<class _Tp, class _Alloc> bool std::operator<(const std::__cxx11::list<_Tp, _Alloc>&, const std::__cxx11::list<_Tp, _Alloc>&)
+     operator<(const list<_Tp, _Alloc>& __x, const list<_Tp, _Alloc>& __y)
+     ^~~~~~~~
+/usr/local/include/c++/7.2.0/bits/stl_list.h:1918:5: note:   template argument deduction/substitution failed:
+src/gestanalyzer.cpp:14:35: note:   mismatched types ‘const std::__cxx11::list<_Tp, _Alloc>’ and ‘size_t {aka long unsigned int}’
+     for(size_t index = 0; index < _nonzero_pos_i; ++index)
+                                   ^~~~~~~~~~~~~~
+In file included from /usr/local/include/c++/7.2.0/deque:64:0,
+                 from /usr/local/include/opencv2/objdetect/objdetect_c.h:50,
+                 from /usr/local/include/opencv2/objdetect.hpp:481,
+                 from /usr/local/include/opencv2/opencv.hpp:77,
+                 from ./include/gestanalyzer.h:4,
+                 from src/gestanalyzer.cpp:1:
+/usr/local/include/c++/7.2.0/bits/stl_deque.h:2276:5: note: candidate: template<class _Tp, class _Alloc> bool std::operator<(const std::deque<_Tp, _Alloc>&, const std::deque<_Tp, _Alloc>&)
+     operator<(const deque<_Tp, _Alloc>& __x,
+     ^~~~~~~~
+/usr/local/include/c++/7.2.0/bits/stl_deque.h:2276:5: note:   template argument deduction/substitution failed:
+src/gestanalyzer.cpp:14:35: note:   mismatched types ‘const std::deque<_Tp, _Alloc>’ and ‘size_t {aka long unsigned int}’
+     for(size_t index = 0; index < _nonzero_pos_i; ++index)
+                                   ^~~~~~~~~~~~~~
+In file included from /usr/local/include/c++/7.2.0/deque:64:0,
+                 from /usr/local/include/opencv2/objdetect/objdetect_c.h:50,
+                 from /usr/local/include/opencv2/objdetect.hpp:481,
+                 from /usr/local/include/opencv2/opencv.hpp:77,
+                 from ./include/gestanalyzer.h:4,
+                 from src/gestanalyzer.cpp:1:
+/usr/local/include/c++/7.2.0/bits/stl_deque.h:301:5: note: candidate: template<class _Tp, class _RefL, class _PtrL, class _RefR, class _PtrR> bool std::operator<(const std::_Deque_iterator<_Tp, _Ref, _Ptr>&, const std::_Deque_iterator<_Tp, _RefR, _PtrR>&)
+     operator<(const _Deque_iterator<_Tp, _RefL, _PtrL>& __x,
+     ^~~~~~~~
+/usr/local/include/c++/7.2.0/bits/stl_deque.h:301:5: note:   template argument deduction/substitution failed:
+src/gestanalyzer.cpp:14:35: note:   mismatched types ‘const std::_Deque_iterator<_Tp, _Ref, _Ptr>’ and ‘size_t {aka long unsigned int}’
+     for(size_t index = 0; index < _nonzero_pos_i; ++index)
+                                   ^~~~~~~~~~~~~~
+In file included from /usr/local/include/c++/7.2.0/deque:64:0,
+                 from /usr/local/include/opencv2/objdetect/objdetect_c.h:50,
+                 from /usr/local/include/opencv2/objdetect.hpp:481,
+                 from /usr/local/include/opencv2/opencv.hpp:77,
+                 from ./include/gestanalyzer.h:4,
+                 from src/gestanalyzer.cpp:1:
+/usr/local/include/c++/7.2.0/bits/stl_deque.h:293:5: note: candidate: template<class _Tp, class _Ref, class _Ptr> bool std::operator<(const std::_Deque_iterator<_Tp, _Ref, _Ptr>&, const std::_Deque_iterator<_Tp, _Ref, _Ptr>&)
+     operator<(const _Deque_iterator<_Tp, _Ref, _Ptr>& __x,
+     ^~~~~~~~
+/usr/local/include/c++/7.2.0/bits/stl_deque.h:293:5: note:   template argument deduction/substitution failed:
+src/gestanalyzer.cpp:14:35: note:   mismatched types ‘const std::_Deque_iterator<_Tp, _Ref, _Ptr>’ and ‘size_t {aka long unsigned int}’
+     for(size_t index = 0; index < _nonzero_pos_i; ++index)
+                                   ^~~~~~~~~~~~~~
+In file included from /usr/local/include/c++/7.2.0/bits/locale_conv.h:41:0,
+                 from /usr/local/include/c++/7.2.0/locale:43,
+                 from /usr/local/include/c++/7.2.0/iomanip:43,
+                 from /usr/local/include/opencv2/flann/lsh_table.h:40,
+                 from /usr/local/include/opencv2/flann/lsh_index.h:49,
+                 from /usr/local/include/opencv2/flann/all_indices.h:42,
+                 from /usr/local/include/opencv2/flann/flann_base.hpp:43,
+                 from /usr/local/include/opencv2/flann.hpp:48,
+                 from /usr/local/include/opencv2/opencv.hpp:62,
+                 from ./include/gestanalyzer.h:4,
+                 from src/gestanalyzer.cpp:1:
+/usr/local/include/c++/7.2.0/bits/unique_ptr.h:734:5: note: candidate: template<class _Tp, class _Dp> bool std::operator<(std::nullptr_t, const std::unique_ptr<_Tp, _Dp>&)
+     operator<(nullptr_t, const unique_ptr<_Tp, _Dp>& __x)
+     ^~~~~~~~
+/usr/local/include/c++/7.2.0/bits/unique_ptr.h:734:5: note:   template argument deduction/substitution failed:
+src/gestanalyzer.cpp:14:35: note:   ‘std::vector<cv::Point_<int> >’ is not derived from ‘const std::unique_ptr<_Tp, _Dp>’
+     for(size_t index = 0; index < _nonzero_pos_i; ++index)
+                                   ^~~~~~~~~~~~~~
+In file included from /usr/local/include/c++/7.2.0/bits/locale_conv.h:41:0,
+                 from /usr/local/include/c++/7.2.0/locale:43,
+                 from /usr/local/include/c++/7.2.0/iomanip:43,
+                 from /usr/local/include/opencv2/flann/lsh_table.h:40,
+                 from /usr/local/include/opencv2/flann/lsh_index.h:49,
+                 from /usr/local/include/opencv2/flann/all_indices.h:42,
+                 from /usr/local/include/opencv2/flann/flann_base.hpp:43,
+                 from /usr/local/include/opencv2/flann.hpp:48,
+                 from /usr/local/include/opencv2/opencv.hpp:62,
+                 from ./include/gestanalyzer.h:4,
+                 from src/gestanalyzer.cpp:1:
+/usr/local/include/c++/7.2.0/bits/unique_ptr.h:728:5: note: candidate: template<class _Tp, class _Dp> bool std::operator<(const std::unique_ptr<_Tp, _Dp>&, std::nullptr_t)
+     operator<(const unique_ptr<_Tp, _Dp>& __x, nullptr_t)
+     ^~~~~~~~
+/usr/local/include/c++/7.2.0/bits/unique_ptr.h:728:5: note:   template argument deduction/substitution failed:
+src/gestanalyzer.cpp:14:35: note:   mismatched types ‘const std::unique_ptr<_Tp, _Dp>’ and ‘size_t {aka long unsigned int}’
+     for(size_t index = 0; index < _nonzero_pos_i; ++index)
+                                   ^~~~~~~~~~~~~~
+In file included from /usr/local/include/c++/7.2.0/bits/locale_conv.h:41:0,
+                 from /usr/local/include/c++/7.2.0/locale:43,
+                 from /usr/local/include/c++/7.2.0/iomanip:43,
+                 from /usr/local/include/opencv2/flann/lsh_table.h:40,
+                 from /usr/local/include/opencv2/flann/lsh_index.h:49,
+                 from /usr/local/include/opencv2/flann/all_indices.h:42,
+                 from /usr/local/include/opencv2/flann/flann_base.hpp:43,
+                 from /usr/local/include/opencv2/flann.hpp:48,
+                 from /usr/local/include/opencv2/opencv.hpp:62,
+                 from ./include/gestanalyzer.h:4,
+                 from src/gestanalyzer.cpp:1:
+/usr/local/include/c++/7.2.0/bits/unique_ptr.h:717:5: note: candidate: template<class _Tp, class _Dp, class _Up, class _Ep> bool std::operator<(const std::unique_ptr<_Tp, _Dp>&, const std::unique_ptr<_Up, _Ep>&)
+     operator<(const unique_ptr<_Tp, _Dp>& __x,
+     ^~~~~~~~
+/usr/local/include/c++/7.2.0/bits/unique_ptr.h:717:5: note:   template argument deduction/substitution failed:
+src/gestanalyzer.cpp:14:35: note:   mismatched types ‘const std::unique_ptr<_Tp, _Dp>’ and ‘size_t {aka long unsigned int}’
+     for(size_t index = 0; index < _nonzero_pos_i; ++index)
+                                   ^~~~~~~~~~~~~~
+In file included from /usr/local/include/c++/7.2.0/set:62:0,
+                 from /usr/local/include/opencv2/flann/result_set.h:38,
+                 from /usr/local/include/opencv2/flann/nn_index.h:36,
+                 from /usr/local/include/opencv2/flann/saving.h:36,
+                 from /usr/local/include/opencv2/flann/flann_base.hpp:41,
+                 from /usr/local/include/opencv2/flann.hpp:48,
+                 from /usr/local/include/opencv2/opencv.hpp:62,
+                 from ./include/gestanalyzer.h:4,
+                 from src/gestanalyzer.cpp:1:
+/usr/local/include/c++/7.2.0/bits/stl_multiset.h:913:5: note: candidate: template<class _Key, class _Compare, class _Alloc> bool std::operator<(const std::multiset<_Key, _Compare, _Alloc>&, const std::multiset<_Key, _Compare, _Alloc>&)
+     operator<(const multiset<_Key, _Compare, _Alloc>& __x,
+     ^~~~~~~~
+/usr/local/include/c++/7.2.0/bits/stl_multiset.h:913:5: note:   template argument deduction/substitution failed:
+src/gestanalyzer.cpp:14:35: note:   mismatched types ‘const std::multiset<_Key, _Compare, _Alloc>’ and ‘size_t {aka long unsigned int}’
+     for(size_t index = 0; index < _nonzero_pos_i; ++index)
+                                   ^~~~~~~~~~~~~~
+In file included from /usr/local/include/c++/7.2.0/set:61:0,
+                 from /usr/local/include/opencv2/flann/result_set.h:38,
+                 from /usr/local/include/opencv2/flann/nn_index.h:36,
+                 from /usr/local/include/opencv2/flann/saving.h:36,
+                 from /usr/local/include/opencv2/flann/flann_base.hpp:41,
+                 from /usr/local/include/opencv2/flann.hpp:48,
+                 from /usr/local/include/opencv2/opencv.hpp:62,
+                 from ./include/gestanalyzer.h:4,
+                 from src/gestanalyzer.cpp:1:
+/usr/local/include/c++/7.2.0/bits/stl_set.h:930:5: note: candidate: template<class _Key, class _Compare, class _Alloc> bool std::operator<(const std::set<_Key, _Compare, _Alloc>&, const std::set<_Key, _Compare, _Alloc>&)
+     operator<(const set<_Key, _Compare, _Alloc>& __x,
+     ^~~~~~~~
+/usr/local/include/c++/7.2.0/bits/stl_set.h:930:5: note:   template argument deduction/substitution failed:
+src/gestanalyzer.cpp:14:35: note:   mismatched types ‘const std::set<_Key, _Compare, _Alloc>’ and ‘size_t {aka long unsigned int}’
+     for(size_t index = 0; index < _nonzero_pos_i; ++index)
+                                   ^~~~~~~~~~~~~~
+In file included from /usr/local/include/c++/7.2.0/map:62:0,
+                 from /usr/local/include/opencv2/flann/params.h:36,
+                 from /usr/local/include/opencv2/flann/flann_base.hpp:40,
+                 from /usr/local/include/opencv2/flann.hpp:48,
+                 from /usr/local/include/opencv2/opencv.hpp:62,
+                 from ./include/gestanalyzer.h:4,
+                 from src/gestanalyzer.cpp:1:
+/usr/local/include/c++/7.2.0/bits/stl_multimap.h:1062:5: note: candidate: template<class _Key, class _Tp, class _Compare, class _Alloc> bool std::operator<(const std::multimap<_Key, _Tp, _Compare, _Alloc>&, const std::multimap<_Key, _Tp, _Compare, _Alloc>&)
+     operator<(const multimap<_Key, _Tp, _Compare, _Alloc>& __x,
+     ^~~~~~~~
+/usr/local/include/c++/7.2.0/bits/stl_multimap.h:1062:5: note:   template argument deduction/substitution failed:
+src/gestanalyzer.cpp:14:35: note:   mismatched types ‘const std::multimap<_Key, _Tp, _Compare, _Alloc>’ and ‘size_t {aka long unsigned int}’
+     for(size_t index = 0; index < _nonzero_pos_i; ++index)
+                                   ^~~~~~~~~~~~~~
+In file included from /usr/local/include/c++/7.2.0/map:61:0,
+                 from /usr/local/include/opencv2/flann/params.h:36,
+                 from /usr/local/include/opencv2/flann/flann_base.hpp:40,
+                 from /usr/local/include/opencv2/flann.hpp:48,
+                 from /usr/local/include/opencv2/opencv.hpp:62,
+                 from ./include/gestanalyzer.h:4,
+                 from src/gestanalyzer.cpp:1:
+/usr/local/include/c++/7.2.0/bits/stl_map.h:1397:5: note: candidate: template<class _Key, class _Tp, class _Compare, class _Alloc> bool std::operator<(const std::map<_Key, _Tp, _Compare, _Alloc>&, const std::map<_Key, _Tp, _Compare, _Alloc>&)
+     operator<(const map<_Key, _Tp, _Compare, _Alloc>& __x,
+     ^~~~~~~~
+/usr/local/include/c++/7.2.0/bits/stl_map.h:1397:5: note:   template argument deduction/substitution failed:
+src/gestanalyzer.cpp:14:35: note:   mismatched types ‘const std::map<_Key, _Tp, _Compare, _Alloc>’ and ‘size_t {aka long unsigned int}’
+     for(size_t index = 0; index < _nonzero_pos_i; ++index)
+                                   ^~~~~~~~~~~~~~
+In file included from /usr/local/include/c++/7.2.0/map:60:0,
+                 from /usr/local/include/opencv2/flann/params.h:36,
+                 from /usr/local/include/opencv2/flann/flann_base.hpp:40,
+                 from /usr/local/include/opencv2/flann.hpp:48,
+                 from /usr/local/include/opencv2/opencv.hpp:62,
+                 from ./include/gestanalyzer.h:4,
+                 from src/gestanalyzer.cpp:1:
+/usr/local/include/c++/7.2.0/bits/stl_tree.h:1543:5: note: candidate: template<class _Key, class _Val, class _KeyOfValue, class _Compare, class _Alloc> bool std::operator<(const std::_Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>&, const std::_Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>&)
+     operator<(const _Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>& __x,
+     ^~~~~~~~
+/usr/local/include/c++/7.2.0/bits/stl_tree.h:1543:5: note:   template argument deduction/substitution failed:
+src/gestanalyzer.cpp:14:35: note:   mismatched types ‘const std::_Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>’ and ‘size_t {aka long unsigned int}’
+     for(size_t index = 0; index < _nonzero_pos_i; ++index)
+                                   ^~~~~~~~~~~~~~
+In file included from /usr/local/include/c++/7.2.0/functional:54:0,
+                 from /usr/local/include/opencv2/core/utility.hpp:60,
+                 from /usr/local/include/opencv2/core.hpp:3224,
+                 from /usr/local/include/opencv2/opencv.hpp:52,
+                 from ./include/gestanalyzer.h:4,
+                 from src/gestanalyzer.cpp:1:
+/usr/local/include/c++/7.2.0/tuple:1410:5: note: candidate: template<class ... _TElements, class ... _UElements> constexpr bool std::operator<(const std::tuple<_Tps ...>&, const std::tuple<_Elements ...>&)
+     operator<(const tuple<_TElements...>& __t,
+     ^~~~~~~~
+/usr/local/include/c++/7.2.0/tuple:1410:5: note:   template argument deduction/substitution failed:
+src/gestanalyzer.cpp:14:35: note:   mismatched types ‘const std::tuple<_Tps ...>’ and ‘size_t {aka long unsigned int}’
+     for(size_t index = 0; index < _nonzero_pos_i; ++index)
+                                   ^~~~~~~~~~~~~~
+In file included from /usr/local/include/c++/7.2.0/bits/ios_base.h:46:0,
+                 from /usr/local/include/c++/7.2.0/ios:42,
+                 from /usr/local/include/c++/7.2.0/istream:38,
+                 from /usr/local/include/c++/7.2.0/sstream:38,
+                 from /usr/local/include/c++/7.2.0/complex:45,
+                 from /usr/local/include/opencv2/core/cvstd.inl.hpp:47,
+                 from /usr/local/include/opencv2/core.hpp:3223,
+                 from /usr/local/include/opencv2/opencv.hpp:52,
+                 from ./include/gestanalyzer.h:4,
+                 from src/gestanalyzer.cpp:1:
+/usr/local/include/c++/7.2.0/system_error:282:3: note: candidate: bool std::operator<(const std::error_condition&, const std::error_condition&)
+   operator<(const error_condition& __lhs,
+   ^~~~~~~~
+/usr/local/include/c++/7.2.0/system_error:282:3: note:   no known conversion for argument 1 from ‘size_t {aka long unsigned int}’ to ‘const std::error_condition&’
+/usr/local/include/c++/7.2.0/system_error:208:3: note: candidate: bool std::operator<(const std::error_code&, const std::error_code&)
+   operator<(const error_code& __lhs, const error_code& __rhs) noexcept
+   ^~~~~~~~
+/usr/local/include/c++/7.2.0/system_error:208:3: note:   no known conversion for argument 1 from ‘size_t {aka long unsigned int}’ to ‘const std::error_code&’
+In file included from /usr/local/include/c++/7.2.0/vector:64:0,
+                 from /usr/local/include/opencv2/core/types.hpp:53,
+                 from /usr/local/include/opencv2/core.hpp:58,
+                 from /usr/local/include/opencv2/opencv.hpp:52,
+                 from ./include/gestanalyzer.h:4,
+                 from src/gestanalyzer.cpp:1:
+/usr/local/include/c++/7.2.0/bits/stl_vector.h:1613:5: note: candidate: template<class _Tp, class _Alloc> bool std::operator<(const std::vector<_Tp, _Alloc>&, const std::vector<_Tp, _Alloc>&)
+     operator<(const vector<_Tp, _Alloc>& __x, const vector<_Tp, _Alloc>& __y)
+     ^~~~~~~~
+/usr/local/include/c++/7.2.0/bits/stl_vector.h:1613:5: note:   template argument deduction/substitution failed:
+src/gestanalyzer.cpp:14:35: note:   mismatched types ‘const std::vector<_Tp, _Alloc>’ and ‘size_t {aka long unsigned int}’
+     for(size_t index = 0; index < _nonzero_pos_i; ++index)
+                                   ^~~~~~~~~~~~~~
+In file included from /usr/local/include/opencv2/core/cvdef.h:424:0,
+                 from /usr/local/include/opencv2/core.hpp:52,
+                 from /usr/local/include/opencv2/opencv.hpp:52,
+                 from ./include/gestanalyzer.h:4,
+                 from src/gestanalyzer.cpp:1:
+/usr/local/include/c++/7.2.0/array:262:5: note: candidate: template<class _Tp, long unsigned int _Nm> bool std::operator<(const std::array<_Tp, _Nm>&, const std::array<_Tp, _Nm>&)
+     operator<(const array<_Tp, _Nm>& __a, const array<_Tp, _Nm>& __b)
+     ^~~~~~~~
+/usr/local/include/c++/7.2.0/array:262:5: note:   template argument deduction/substitution failed:
+src/gestanalyzer.cpp:14:35: note:   mismatched types ‘const std::array<_Tp, _Nm>’ and ‘size_t {aka long unsigned int}’
+     for(size_t index = 0; index < _nonzero_pos_i; ++index)
+                                   ^~~~~~~~~~~~~~
+In file included from /usr/local/include/c++/7.2.0/string:52:0,
+                 from /usr/local/include/c++/7.2.0/stdexcept:39,
+                 from /usr/local/include/c++/7.2.0/array:39,
+                 from /usr/local/include/opencv2/core/cvdef.h:424,
+                 from /usr/local/include/opencv2/core.hpp:52,
+                 from /usr/local/include/opencv2/opencv.hpp:52,
+                 from ./include/gestanalyzer.h:4,
+                 from src/gestanalyzer.cpp:1:
+/usr/local/include/c++/7.2.0/bits/basic_string.h:5917:5: note: candidate: template<class _CharT, class _Traits, class _Alloc> bool std::operator<(const _CharT*, const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&)
+     operator<(const _CharT* __lhs,
+     ^~~~~~~~
+/usr/local/include/c++/7.2.0/bits/basic_string.h:5917:5: note:   template argument deduction/substitution failed:
+src/gestanalyzer.cpp:14:35: note:   mismatched types ‘const _CharT*’ and ‘long unsigned int’
+     for(size_t index = 0; index < _nonzero_pos_i; ++index)
+                                   ^~~~~~~~~~~~~~
+In file included from /usr/local/include/c++/7.2.0/string:52:0,
+                 from /usr/local/include/c++/7.2.0/stdexcept:39,
+                 from /usr/local/include/c++/7.2.0/array:39,
+                 from /usr/local/include/opencv2/core/cvdef.h:424,
+                 from /usr/local/include/opencv2/core.hpp:52,
+                 from /usr/local/include/opencv2/opencv.hpp:52,
+                 from ./include/gestanalyzer.h:4,
+                 from src/gestanalyzer.cpp:1:
+/usr/local/include/c++/7.2.0/bits/basic_string.h:5905:5: note: candidate: template<class _CharT, class _Traits, class _Alloc> bool std::operator<(const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&, const _CharT*)
+     operator<(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+     ^~~~~~~~
+/usr/local/include/c++/7.2.0/bits/basic_string.h:5905:5: note:   template argument deduction/substitution failed:
+src/gestanalyzer.cpp:14:35: note:   mismatched types ‘const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>’ and ‘size_t {aka long unsigned int}’
+     for(size_t index = 0; index < _nonzero_pos_i; ++index)
+                                   ^~~~~~~~~~~~~~
+In file included from /usr/local/include/c++/7.2.0/string:52:0,
+                 from /usr/local/include/c++/7.2.0/stdexcept:39,
+                 from /usr/local/include/c++/7.2.0/array:39,
+                 from /usr/local/include/opencv2/core/cvdef.h:424,
+                 from /usr/local/include/opencv2/core.hpp:52,
+                 from /usr/local/include/opencv2/opencv.hpp:52,
+                 from ./include/gestanalyzer.h:4,
+                 from src/gestanalyzer.cpp:1:
+/usr/local/include/c++/7.2.0/bits/basic_string.h:5892:5: note: candidate: template<class _CharT, class _Traits, class _Alloc> bool std::operator<(const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&, const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&)
+     operator<(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+     ^~~~~~~~
+/usr/local/include/c++/7.2.0/bits/basic_string.h:5892:5: note:   template argument deduction/substitution failed:
+src/gestanalyzer.cpp:14:35: note:   mismatched types ‘const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>’ and ‘size_t {aka long unsigned int}’
+     for(size_t index = 0; index < _nonzero_pos_i; ++index)
+                                   ^~~~~~~~~~~~~~
+In file included from /usr/local/include/c++/7.2.0/bits/stl_algobase.h:67:0,
+                 from /usr/local/include/c++/7.2.0/bits/char_traits.h:39,
+                 from /usr/local/include/c++/7.2.0/string:40,
+                 from /usr/local/include/c++/7.2.0/stdexcept:39,
+                 from /usr/local/include/c++/7.2.0/array:39,
+                 from /usr/local/include/opencv2/core/cvdef.h:424,
+                 from /usr/local/include/opencv2/core.hpp:52,
+                 from /usr/local/include/opencv2/opencv.hpp:52,
+                 from ./include/gestanalyzer.h:4,
+                 from src/gestanalyzer.cpp:1:
+/usr/local/include/c++/7.2.0/bits/stl_iterator.h:1148:5: note: candidate: template<class _Iterator> bool std::operator<(const std::move_iterator<_IteratorL>&, const std::move_iterator<_IteratorL>&)
+     operator<(const move_iterator<_Iterator>& __x,
+     ^~~~~~~~
+/usr/local/include/c++/7.2.0/bits/stl_iterator.h:1148:5: note:   template argument deduction/substitution failed:
+src/gestanalyzer.cpp:14:35: note:   mismatched types ‘const std::move_iterator<_IteratorL>’ and ‘size_t {aka long unsigned int}’
+     for(size_t index = 0; index < _nonzero_pos_i; ++index)
+                                   ^~~~~~~~~~~~~~
+In file included from /usr/local/include/c++/7.2.0/bits/stl_algobase.h:67:0,
+                 from /usr/local/include/c++/7.2.0/bits/char_traits.h:39,
+                 from /usr/local/include/c++/7.2.0/string:40,
+                 from /usr/local/include/c++/7.2.0/stdexcept:39,
+                 from /usr/local/include/c++/7.2.0/array:39,
+                 from /usr/local/include/opencv2/core/cvdef.h:424,
+                 from /usr/local/include/opencv2/core.hpp:52,
+                 from /usr/local/include/opencv2/opencv.hpp:52,
+                 from ./include/gestanalyzer.h:4,
+                 from src/gestanalyzer.cpp:1:
+/usr/local/include/c++/7.2.0/bits/stl_iterator.h:1142:5: note: candidate: template<class _IteratorL, class _IteratorR> bool std::operator<(const std::move_iterator<_IteratorL>&, const std::move_iterator<_IteratorR>&)
+     operator<(const move_iterator<_IteratorL>& __x,
+     ^~~~~~~~
+/usr/local/include/c++/7.2.0/bits/stl_iterator.h:1142:5: note:   template argument deduction/substitution failed:
+src/gestanalyzer.cpp:14:35: note:   mismatched types ‘const std::move_iterator<_IteratorL>’ and ‘size_t {aka long unsigned int}’
+     for(size_t index = 0; index < _nonzero_pos_i; ++index)
+                                   ^~~~~~~~~~~~~~
+In file included from /usr/local/include/c++/7.2.0/bits/stl_algobase.h:67:0,
+                 from /usr/local/include/c++/7.2.0/bits/char_traits.h:39,
+                 from /usr/local/include/c++/7.2.0/string:40,
+                 from /usr/local/include/c++/7.2.0/stdexcept:39,
+                 from /usr/local/include/c++/7.2.0/array:39,
+                 from /usr/local/include/opencv2/core/cvdef.h:424,
+                 from /usr/local/include/opencv2/core.hpp:52,
+                 from /usr/local/include/opencv2/opencv.hpp:52,
+                 from ./include/gestanalyzer.h:4,
+                 from src/gestanalyzer.cpp:1:
+/usr/local/include/c++/7.2.0/bits/stl_iterator.h:343:5: note: candidate: template<class _IteratorL, class _IteratorR> bool std::operator<(const std::reverse_iterator<_Iterator>&, const std::reverse_iterator<_IteratorR>&)
+     operator<(const reverse_iterator<_IteratorL>& __x,
+     ^~~~~~~~
+/usr/local/include/c++/7.2.0/bits/stl_iterator.h:343:5: note:   template argument deduction/substitution failed:
+src/gestanalyzer.cpp:14:35: note:   mismatched types ‘const std::reverse_iterator<_Iterator>’ and ‘size_t {aka long unsigned int}’
+     for(size_t index = 0; index < _nonzero_pos_i; ++index)
+                                   ^~~~~~~~~~~~~~
+In file included from /usr/local/include/c++/7.2.0/bits/stl_algobase.h:67:0,
+                 from /usr/local/include/c++/7.2.0/bits/char_traits.h:39,
+                 from /usr/local/include/c++/7.2.0/string:40,
+                 from /usr/local/include/c++/7.2.0/stdexcept:39,
+                 from /usr/local/include/c++/7.2.0/array:39,
+                 from /usr/local/include/opencv2/core/cvdef.h:424,
+                 from /usr/local/include/opencv2/core.hpp:52,
+                 from /usr/local/include/opencv2/opencv.hpp:52,
+                 from ./include/gestanalyzer.h:4,
+                 from src/gestanalyzer.cpp:1:
+/usr/local/include/c++/7.2.0/bits/stl_iterator.h:305:5: note: candidate: template<class _Iterator> bool std::operator<(const std::reverse_iterator<_Iterator>&, const std::reverse_iterator<_Iterator>&)
+     operator<(const reverse_iterator<_Iterator>& __x,
+     ^~~~~~~~
+/usr/local/include/c++/7.2.0/bits/stl_iterator.h:305:5: note:   template argument deduction/substitution failed:
+src/gestanalyzer.cpp:14:35: note:   mismatched types ‘const std::reverse_iterator<_Iterator>’ and ‘size_t {aka long unsigned int}’
+     for(size_t index = 0; index < _nonzero_pos_i; ++index)
+                                   ^~~~~~~~~~~~~~
+In file included from /usr/local/include/c++/7.2.0/utility:70:0,
+                 from /usr/local/include/c++/7.2.0/array:38,
+                 from /usr/local/include/opencv2/core/cvdef.h:424,
+                 from /usr/local/include/opencv2/core.hpp:52,
+                 from /usr/local/include/opencv2/opencv.hpp:52,
+                 from ./include/gestanalyzer.h:4,
+                 from src/gestanalyzer.cpp:1:
+/usr/local/include/c++/7.2.0/bits/stl_pair.h:449:5: note: candidate: template<class _T1, class _T2> constexpr bool std::operator<(const std::pair<_T1, _T2>&, const std::pair<_T1, _T2>&)
+     operator<(const pair<_T1, _T2>& __x, const pair<_T1, _T2>& __y)
+     ^~~~~~~~
+/usr/local/include/c++/7.2.0/bits/stl_pair.h:449:5: note:   template argument deduction/substitution failed:
+src/gestanalyzer.cpp:14:35: note:   mismatched types ‘const std::pair<_T1, _T2>’ and ‘size_t {aka long unsigned int}’
+     for(size_t index = 0; index < _nonzero_pos_i; ++index)
+                                   ^~~~~~~~~~~~~~
+In file included from /usr/local/include/opencv2/core.hpp:60:0,
+                 from /usr/local/include/opencv2/opencv.hpp:52,
+                 from ./include/gestanalyzer.h:4,
+                 from src/gestanalyzer.cpp:1:
+/usr/local/include/opencv2/core/persistence.hpp:1315:6: note: candidate: bool cv::operator<(const cv::FileNodeIterator&, const cv::FileNodeIterator&)
+ bool operator < (const FileNodeIterator& it1, const FileNodeIterator& it2)
+      ^~~~~~~~
+/usr/local/include/opencv2/core/persistence.hpp:1315:6: note:   no known conversion for argument 1 from ‘size_t {aka long unsigned int}’ to ‘const cv::FileNodeIterator&’
+In file included from /usr/local/include/opencv2/core/mat.hpp:3628:0,
+                 from /usr/local/include/opencv2/core.hpp:59,
+                 from /usr/local/include/opencv2/opencv.hpp:52,
+                 from ./include/gestanalyzer.h:4,
+                 from src/gestanalyzer.cpp:1:
+/usr/local/include/opencv2/core/mat.inl.hpp:2654:6: note: candidate: bool cv::operator<(const cv::MatConstIterator&, const cv::MatConstIterator&)
+ bool operator < (const MatConstIterator& a, const MatConstIterator& b)
+      ^~~~~~~~
+/usr/local/include/opencv2/core/mat.inl.hpp:2654:6: note:   no known conversion for argument 2 from ‘std::vector<cv::Point_<int> >’ to ‘const cv::MatConstIterator&’
+In file included from /usr/local/include/opencv2/core.hpp:59:0,
+                 from /usr/local/include/opencv2/opencv.hpp:52,
+                 from ./include/gestanalyzer.h:4,
+                 from src/gestanalyzer.cpp:1:
+/usr/local/include/opencv2/core/mat.hpp:3562:20: note: candidate: cv::MatExpr cv::operator<(double, const cv::Mat&)
+ CV_EXPORTS MatExpr operator < (double s, const Mat& a);
+                    ^~~~~~~~
+/usr/local/include/opencv2/core/mat.hpp:3562:20: note:   no known conversion for argument 2 from ‘std::vector<cv::Point_<int> >’ to ‘const cv::Mat&’
+/usr/local/include/opencv2/core/mat.hpp:3561:20: note: candidate: cv::MatExpr cv::operator<(const cv::Mat&, double)
+ CV_EXPORTS MatExpr operator < (const Mat& a, double s);
+                    ^~~~~~~~
+/usr/local/include/opencv2/core/mat.hpp:3561:20: note:   no known conversion for argument 1 from ‘size_t {aka long unsigned int}’ to ‘const cv::Mat&’
+/usr/local/include/opencv2/core/mat.hpp:3560:20: note: candidate: cv::MatExpr cv::operator<(const cv::Mat&, const cv::Mat&)
+ CV_EXPORTS MatExpr operator < (const Mat& a, const Mat& b);
+                    ^~~~~~~~
+/usr/local/include/opencv2/core/mat.hpp:3560:20: note:   no known conversion for argument 1 from ‘size_t {aka long unsigned int}’ to ‘const cv::Mat&’
+In file included from /usr/local/include/opencv2/core/base.hpp:58:0,
+                 from /usr/local/include/opencv2/core.hpp:54,
+                 from /usr/local/include/opencv2/opencv.hpp:52,
+                 from ./include/gestanalyzer.h:4,
+                 from src/gestanalyzer.cpp:1:
+/usr/local/include/opencv2/core/cvstd.hpp:1017:20: note: candidate: bool cv::operator<(const cv::String&, const char*)
+ static inline bool operator<  (const String& lhs, const char*   rhs) { return lhs.compare(rhs) <  0; }
+                    ^~~~~~~~
+/usr/local/include/opencv2/core/cvstd.hpp:1017:20: note:   no known conversion for argument 2 from ‘std::vector<cv::Point_<int> >’ to ‘const char*’
+/usr/local/include/opencv2/core/cvstd.hpp:1016:20: note: candidate: bool cv::operator<(const char*, const cv::String&)
+ static inline bool operator<  (const char*   lhs, const String& rhs) { return rhs.compare(lhs) >  0; }
+                    ^~~~~~~~
+/usr/local/include/opencv2/core/cvstd.hpp:1016:20: note:   no known conversion for argument 2 from ‘std::vector<cv::Point_<int> >’ to ‘const cv::String&’
+/usr/local/include/opencv2/core/cvstd.hpp:1015:20: note: candidate: bool cv::operator<(const cv::String&, const cv::String&)
+ static inline bool operator<  (const String& lhs, const String& rhs) { return lhs.compare(rhs) <  0; }
+                    ^~~~~~~~
+/usr/local/include/opencv2/core/cvstd.hpp:1015:20: note:   no known conversion for argument 2 from ‘std::vector<cv::Point_<int> >’ to ‘const cv::String&’
+In file included from /usr/local/include/c++/7.2.0/bits/stl_algobase.h:67:0,
+                 from /usr/local/include/c++/7.2.0/bits/char_traits.h:39,
+                 from /usr/local/include/c++/7.2.0/string:40,
+                 from /usr/local/include/c++/7.2.0/stdexcept:39,
+                 from /usr/local/include/c++/7.2.0/array:39,
+                 from /usr/local/include/opencv2/core/cvdef.h:424,
+                 from /usr/local/include/opencv2/core.hpp:52,
+                 from /usr/local/include/opencv2/opencv.hpp:52,
+                 from ./include/gestanalyzer.h:4,
+                 from src/gestanalyzer.cpp:1:
+/usr/local/include/c++/7.2.0/bits/stl_iterator.h:895:5: note: candidate: template<class _Iterator, class _Container> bool __gnu_cxx::operator<(const __gnu_cxx::__normal_iterator<_Iterator, _Container>&, const __gnu_cxx::__normal_iterator<_Iterator, _Container>&)
+     operator<(const __normal_iterator<_Iterator, _Container>& __lhs,
+     ^~~~~~~~
+/usr/local/include/c++/7.2.0/bits/stl_iterator.h:895:5: note:   template argument deduction/substitution failed:
+src/gestanalyzer.cpp:14:35: note:   mismatched types ‘const __gnu_cxx::__normal_iterator<_Iterator, _Container>’ and ‘size_t {aka long unsigned int}’
+     for(size_t index = 0; index < _nonzero_pos_i; ++index)
+                                   ^~~~~~~~~~~~~~
+In file included from /usr/local/include/c++/7.2.0/bits/stl_algobase.h:67:0,
+                 from /usr/local/include/c++/7.2.0/bits/char_traits.h:39,
+                 from /usr/local/include/c++/7.2.0/string:40,
+                 from /usr/local/include/c++/7.2.0/stdexcept:39,
+                 from /usr/local/include/c++/7.2.0/array:39,
+                 from /usr/local/include/opencv2/core/cvdef.h:424,
+                 from /usr/local/include/opencv2/core.hpp:52,
+                 from /usr/local/include/opencv2/opencv.hpp:52,
+                 from ./include/gestanalyzer.h:4,
+                 from src/gestanalyzer.cpp:1:
+/usr/local/include/c++/7.2.0/bits/stl_iterator.h:888:5: note: candidate: template<class _IteratorL, class _IteratorR, class _Container> bool __gnu_cxx::operator<(const __gnu_cxx::__normal_iterator<_IteratorL, _Container>&, const __gnu_cxx::__normal_iterator<_IteratorR, _Container>&)
+     operator<(const __normal_iterator<_IteratorL, _Container>& __lhs,
+     ^~~~~~~~
+/usr/local/include/c++/7.2.0/bits/stl_iterator.h:888:5: note:   template argument deduction/substitution failed:
+src/gestanalyzer.cpp:14:35: note:   mismatched types ‘const __gnu_cxx::__normal_iterator<_IteratorL, _Container>’ and ‘size_t {aka long unsigned int}’
+     for(size_t index = 0; index < _nonzero_pos_i; ++index)
+                                   ^~~~~~~~~~~~~~
+src/gestanalyzer.cpp:26:68: error: ‘_center_index’ was not declared in this scope
+     for(size_t center_index = 0; center_index < ccenters.size(); ++_center_index)
+                                                                    ^~~~~~~~~~~~~
+src/gestanalyzer.cpp:26:68: note: suggested alternative: ‘center_index’
+     for(size_t center_index = 0; center_index < ccenters.size(); ++_center_index)
+                                                                    ^~~~~~~~~~~~~
+                                                                    center_index
+make: *** [build/gestanalyzer.o] Error 1
