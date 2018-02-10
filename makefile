@@ -28,7 +28,7 @@ all: $(TARGET_1) $(TARGET_2)#and other targets
 
 $(TARGET_1): build/caliberator.o build/histgenerator.o build/sampler.o
 	$(LINK)
-$(TARGET_2): build/controller.o build/histgenerator.o build/gestanalyzer.o
+$(TARGET_2): build/controller.o build/histgenerator.o build/gestanalyzer.o build/tcpclient.o
 	$(LINK)
 
 build/histgenerator.o: src/histgenerator.cpp
@@ -41,7 +41,8 @@ build/controller.o: src/controller.cpp
 	$(COMPILE)
 build/gestanalyzer.o: src/gestanalyzer.cpp
 	$(COMPILE)
-
+build/tcpclient.o: src/tcpclient.cpp
+	$(COMPILE)
 #[other targets]
 
 $(shell mkdir -p bin)

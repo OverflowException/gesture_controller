@@ -4,49 +4,81 @@
 #include "histgenerator.h"
 #include "platformcam.h"
 #include "gestanalyzer.h"
+#include "tcpclient.h"
 
 int main(int argc, char** argv)
 {
-  if(argc != 2)
+  if(argc != 3)
     {
-      std::cerr << "Usage: " << argv[0] << " [histogram file name]" << std::endl;
+      std::cerr << "Usage: " << argv[0] << " [connection config file] [histogram file name]"
+		<< std::endl;
       return 0;
     }
+  
+  std::ifstream ifs_config, ifs_hist;
+  std::string line_buf;
 
-  //Read in historgram data from file
-  std::ifstream ifs;
-  ifs.open(argv[1]);
-  if(!ifs.is_open())
+
+  std::string str_ip; //ip address, in string form
+  int port; //port number
+  //Connection configuration
+  ifs_config.open(argv[1]);
+  if(!ifs_config.is_open())
     {
       std::cerr << "Cannot open file " << argv[1] << "!" << std::endl;
       return 0;
     }
 
-  std::string line_buf;
-  getline(ifs, line_buf);
-  if(line_buf != "#hist_data")
+  //Verify connection configuration file header
+  getline(ifs_config, line_buf);
+  if(line_buf != "#connection_config")
     {
       std::cerr << "File " << argv[1] << " header mismatch!" << std::endl;
       return 0;
     }
 
+  //Read ip address nd port
+  getline(ifs_config, str_ip);
+  ifs_config >> port;
+  ifs_config.close();
+
+  std::cout << "Connecting to " << str_ip << " " << port << std::endl;
+  TCPClient sender;
+  sender.Setup(str_ip, port);
+  std::cout << "Done!" << std::endl;
+  
+  //Read in historgram data from file
+  ifs_hist.open(argv[2]);
+  if(!ifs_hist.is_open())
+    {
+      std::cerr << "Cannot open file " << argv[2] << "!" << std::endl;
+      return 0;
+    }
+
+  getline(ifs_hist, line_buf);
+  if(line_buf != "#hist_data")
+    {
+      std::cerr << "File " << argv[2] << " header mismatch!" << std::endl;
+      return 0;
+    }
   
   std::vector<int> channels(2, 0), binsizes(2, 0);
   std::vector<float> ranges(2, 0);
   float value_buf = 0;
     
   //Read histogram info
-  ifs >> channels[0]; ifs >> channels[1];
-  ifs >> binsizes[0]; ifs >> binsizes[1];
-  ifs >> ranges[0]; ifs >> ranges[1];
+  ifs_hist >> channels[0]; ifs_hist >> channels[1];
+  ifs_hist >> binsizes[0]; ifs_hist >> binsizes[1];
+  ifs_hist >> ranges[0]; ifs_hist >> ranges[1];
   cv::Mat hist_ref(binsizes[0], binsizes[1], CV_32FC1);
   //Read histogram data
   for(cv::MatIterator_<float> hist_it = hist_ref.begin<float>();
       hist_it != hist_ref.end<float>(); ++hist_it)
     {
-      ifs >> value_buf;
+      ifs_hist >> value_buf;
       *hist_it = value_buf;
     }
+  ifs_hist.close();
   
   //Normalize histogram
   cv::Mat hist_ref_norm;
@@ -70,7 +102,8 @@ int main(int argc, char** argv)
       return 0;
     }
 
-  int prev_gcode = -1, curr_gcode = -1;
+  int gcode;
+  std::string str_gcode;
   std::string gesture_name;
   std::vector<cv::Point> cluster_centers;
   //Read time images processing
@@ -88,26 +121,32 @@ int main(int argc, char** argv)
       cv::threshold(backproj, backproj, 0, 255, cv::THRESH_OTSU);
 
 
-      curr_gcode = ga.analyze(backproj, cluster_centers);
-      gesture_name = ctrler::GestAnalyzer::gestureName(curr_gcode);
+      gcode = ga.analyze(backproj, cluster_centers);
+      gesture_name = ctrler::GestAnalyzer::gestureName(gcode);
       
-      if(curr_gcode < 0)
-	std::cout << "Invalid gesture! Error code = "  << curr_gcode << std::endl;
-      
-      for(cv::Point center : cluster_centers)
-	cv::circle(img_bgr, center, 10, cv::Scalar_<uchar>(255, 255, 0), 3, cv::FILLED);
-      
-      cv::putText(img_bgr, gesture_name, cv::Point(100, 100),
-		  cv::FONT_HERSHEY_SIMPLEX, 3, cv::Scalar_<uchar>(0, 255, 0),
-		  5, cv::FILLED);
+      if(gcode < 0)
+	std::cerr << "Invalid gesture! Error code = "  << gcode << std::endl;
 
+      else
+	{
+	  str_gcode = std::to_string(gcode);
+	  sender.Send(str_gcode);
+	  for(cv::Point center : cluster_centers)
+	    cv::circle(img_bgr, center, 10, cv::Scalar_<uchar>(255, 255, 0), 3, cv::FILLED);
+      
+	  cv::putText(img_bgr, gesture_name, cv::Point(100, 100),
+		      cv::FONT_HERSHEY_SIMPLEX, 3, cv::Scalar_<uchar>(0, 255, 0),
+		      5, cv::FILLED);
+
+	}
+     
       cv::imshow("Back projection", backproj);
       cv::imshow("Capture result", img_bgr);
       if(cv::waitKey(1) == 'q')
 	break;
     }
 
-  
+  sender.Exit();
   s_vid.release();
   cv::destroyAllWindows();
 
