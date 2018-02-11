@@ -43,7 +43,7 @@ int main(int argc, char** argv)
   ifs_config.close();
 
   std::cout << "Connecting to " << str_ip << " " << port << std::endl;
-  TCPClient sender;
+  ctrler::TCPClient sender;
   sender.Setup(str_ip, port);
   std::cout << "Done!" << std::endl;
   

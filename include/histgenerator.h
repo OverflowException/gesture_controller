@@ -10,22 +10,55 @@ namespace ctrler
   class HistGenerator
   {
   public:
-    //ctor
+    /**
+       Constructor
+       @params
+       channels: indices of channels used to calculate histogram
+       binsizes: number fo bins for each channel
+       ranges: value ranges of each channel
+     */
     HistGenerator(const std::vector<int>& channels, const std::vector<int>& binsizes,
 		  const std::vector<float>& ranges);
-    //dtor    
+    /**
+       Destructor
+    */
     ~HistGenerator();
 
-    //generate or regenerate histogram
+    /**
+       Generate histogram
+       @params
+       img: input image
+       hist: output histogram
+       @return
+     */
     void gen(const cv::Mat& img, cv::Mat& hist);
-    
-    //acculumute histogram
+
+    /**
+       Accumulate histogram
+       @params
+       img: input image
+       hist: add the histogram of input image to hist, which must be of CV_32FC1 type
+       @return
+     */
     void accumulate(const cv::Mat& img, cv::Mat& hist);
 
-    //Generate a histogram map, only capable of 2d histogram
+    /**
+       Generate a visualized histogram map. Only capable of 2D histogram.
+       @params
+       hist: input histogram
+       map: output 2D histogram type. CV_8UC1 type
+       elesize: size of a single element on histogram map
+     */
     void histMap(const cv::Mat& hist, cv::Mat& map, const cv::Size& eleSize);
 
-    //Obtain back project. Only capable of 2d histogram
+    /**
+       Generate back projection of a image according to histogram
+       @params
+       img: input image
+       hist: reference histogram
+       backproj: output backproject
+       @return
+     */
     void backProject(const cv::Mat& img, const cv::Mat& hist,
 		     cv::Mat& backproj);
 
