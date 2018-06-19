@@ -54,7 +54,7 @@ namespace ctrler
        Calculate euclidian distance of 2 points
      */
     template<typename T>
-      inline double distance(const T& p1, const T& p2)
+      inline double distance(const cv::Point_<T>& p1, const cv::Point_<T>& p2)
       {
 	return sqrt(pow(double(p1.x - p2.x), 2) + pow(double(p1.y - p2.y), 2));
       }
